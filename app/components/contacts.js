@@ -5,134 +5,147 @@ export default function Contact() {
   return (
     <section
       id="contacts"
-      className="bg-white dark:bg-gray-950 text-black dark:text-white py-28 px-6 scroll-mt-20 transition-colors duration-300"
+      className="bg-[#3B2523] text-[#FFF9F3] py-24 px-6 md:px-12 scroll-mt-20 transition-colors duration-300"
     >
       <div className="max-w-7xl mx-auto">
 
-        {/* Section Heading */}
-        <div className="max-w-4xl mb-16">
+        {/* Main Contact Layout */}
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24">
 
-          <p className="text-sm font-semibold tracking-[0.3em] uppercase text-gray-500 dark:text-gray-400 mb-5">
-            Get in touch
-          </p>
+          {/* Left Side */}
+          <div className="flex flex-col justify-between">
+            <div>
+              <div className="flex items-center gap-3 mb-10">
+                <span className="w-10 h-[1px] bg-[#D6B9AE]"></span>
+                <p className="text-sm uppercase tracking-[0.3em] text-[#D6B9AE]">
+                  Get in touch
+                </p>
+              </div>
 
-          <h2 className="text-5xl md:text-7xl font-bold tracking-tight leading-tight mb-8">
-            Let's work
-            <br />
-            <span className="text-gray-400 dark:text-gray-500">
-              together.
-            </span>
-          </h2>
+              <h2 className="text-6xl md:text-8xl font-bold leading-[0.95] tracking-tight">
+                Let's
+                <br />
+                create
+                <br />
+                <span className="text-[#D6B9AE] italic font-serif">
+                  something.
+                </span>
+              </h2>
 
-          <p className="text-gray-600 dark:text-gray-300 text-lg leading-8 max-w-2xl">
-            Interested in my work or have an opportunity to discuss?
-            I'd be happy to connect. Feel free to reach out through
-            any of my contact channels.
-          </p>
+              <p className="mt-10 text-[#D8C2B6] text-base md:text-lg leading-8 max-w-md">
+                Have a project in mind, an opportunity, or simply want to connect?
+                I'd love to hear from you. Let's start a conversation.
+              </p>
+            </div>
 
+            <div className="hidden lg:block mt-20">
+              <p className="text-xs tracking-[0.25em] uppercase text-[#B58B70]">
+                Available for opportunities
+              </p>
+              <div className="w-20 h-[2px] bg-[#702F3D] mt-4"></div>
+            </div>
+          </div>
+
+          {/* Right Side */}
+          <div className="flex flex-col justify-center">
+
+            <p className="text-xs uppercase tracking-[0.25em] text-[#B58B70] mb-8">
+              Contact Information
+            </p>
+
+            <div className="border-t border-[#70534B]">
+
+              {/* Email */}
+              {portfolioData.email && (
+                <a
+                  href={`mailto:${portfolioData.email}`}
+                  className="group flex justify-between items-center gap-5 py-8 border-b border-[#70534B] hover:px-4 transition-all duration-300"
+                >
+                  <div>
+                    <p className="text-xs tracking-[0.2em] text-[#D6B9AE] mb-3">
+                      01 / EMAIL
+                    </p>
+                    <h3 className="text-xl md:text-2xl font-medium break-all">
+                      {portfolioData.email}
+                    </h3>
+                  </div>
+                  <span className="text-3xl text-[#D6B9AE] group-hover:translate-x-2 transition-transform">
+                    ↗
+                  </span>
+                </a>
+              )}
+
+              {/* GitHub */}
+              {portfolioData.github && (
+                <a
+                  href={portfolioData.github}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="group flex justify-between items-center gap-5 py-8 border-b border-[#70534B] hover:px-4 transition-all duration-300"
+                >
+                  <div>
+                    <p className="text-xs tracking-[0.2em] text-[#D6B9AE] mb-3">
+                      02 / GITHUB
+                    </p>
+                    <h3 className="text-xl md:text-2xl font-medium">
+                      Explore my code
+                    </h3>
+                  </div>
+                  <span className="text-3xl text-[#D6B9AE] group-hover:translate-x-2 transition-transform">
+                    ↗
+                  </span>
+                </a>
+              )}
+
+              {/* LinkedIn */}
+              {portfolioData.linkedin && (
+                <a
+                  href={portfolioData.linkedin}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="group flex justify-between items-center gap-5 py-8 border-b border-[#70534B] hover:px-4 transition-all duration-300"
+                >
+                  <div>
+                    <p className="text-xs tracking-[0.2em] text-[#D6B9AE] mb-3">
+                      03 / LINKEDIN
+                    </p>
+                    <h3 className="text-xl md:text-2xl font-medium">
+                      Let's connect
+                    </h3>
+                  </div>
+                  <span className="text-3xl text-[#D6B9AE] group-hover:translate-x-2 transition-transform">
+                    ↗
+                  </span>
+                </a>
+              )}
+
+            </div>
+
+            <p className="text-sm text-[#BFA69A] mt-8 leading-7">
+              I'm always open to learning, collaboration, and new experiences.
+              Feel free to reach out.
+            </p>
+          </div>
         </div>
-
-        {/* Contact Links */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-
-          {/* Email */}
-          {portfolioData.email && (
-            <a
-              href={`mailto:${portfolioData.email}`}
-              className="group border border-gray-200 dark:border-gray-800 rounded-2xl p-7 hover:border-black dark:hover:border-white hover:-translate-y-1 transition-all duration-300"
-            >
-              <div className="flex justify-between items-center mb-10">
-                <span className="text-sm text-gray-500 dark:text-gray-400 font-medium">
-                  EMAIL
-                </span>
-                <span className="text-2xl text-black dark:text-white group-hover:translate-x-1 group-hover:-translate-y-1 transition">
-                  ↗
-                </span>
-              </div>
-
-              <h3 className="text-xl font-bold mb-2 text-black dark:text-white">
-                Email Me
-              </h3>
-
-              <p className="text-sm text-gray-500 dark:text-gray-400 break-all">
-                {portfolioData.email}
-              </p>
-            </a>
-          )}
-
-          {/* GitHub */}
-          {portfolioData.github && (
-            <a
-              href={portfolioData.github}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="group border border-gray-200 dark:border-gray-800 rounded-2xl p-7 hover:border-black dark:hover:border-white hover:-translate-y-1 transition-all duration-300"
-            >
-              <div className="flex justify-between items-center mb-10">
-                <span className="text-sm text-gray-500 dark:text-gray-400 font-medium">
-                  GITHUB
-                </span>
-                <span className="text-2xl text-black dark:text-white group-hover:translate-x-1 group-hover:-translate-y-1 transition">
-                  ↗
-                </span>
-              </div>
-
-              <h3 className="text-xl font-bold mb-2 text-black dark:text-white">
-                GitHub Profile
-              </h3>
-
-              <p className="text-sm text-gray-500 dark:text-gray-400">
-                Explore my projects and code.
-              </p>
-            </a>
-          )}
-
-          {/* LinkedIn */}
-          {portfolioData.linkedin && (
-            <a
-              href={portfolioData.linkedin}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="group border border-gray-200 dark:border-gray-800 rounded-2xl p-7 hover:border-black dark:hover:border-white hover:-translate-y-1 transition-all duration-300"
-            >
-              <div className="flex justify-between items-center mb-10">
-                <span className="text-sm text-gray-500 dark:text-gray-400 font-medium">
-                  LINKEDIN
-                </span>
-                <span className="text-2xl text-black dark:text-white group-hover:translate-x-1 group-hover:-translate-y-1 transition">
-                  ↗
-                </span>
-              </div>
-
-              <h3 className="text-xl font-bold mb-2 text-black dark:text-white">
-                LinkedIn Profile
-              </h3>
-
-              <p className="text-sm text-gray-500 dark:text-gray-400">
-                Let's connect professionally.
-              </p>
-            </a>
-          )}
-
-        </div>
-
-        {/* Bottom Divider */}
-        <div className="mt-24 border-t border-gray-200 dark:border-gray-800"></div>
 
         {/* Footer */}
-        <div className="flex flex-col md:flex-row justify-between items-center gap-4 pt-8">
-
-          <p className="text-sm text-gray-500 dark:text-gray-400">
-            © 2026 {portfolioData.name}. All rights reserved.
-          </p>
+        <div className="mt-28 pt-8 border-t border-[#70534B] flex flex-col md:flex-row justify-between items-center gap-5">
+          <div>
+            <p className="text-lg font-bold tracking-wider">
+              {portfolioData.name}
+              <span className="text-[#D6B9AE]">.</span>
+            </p>
+            <p className="text-xs text-[#BFA69A] mt-2">
+              © 2026 All rights reserved.
+            </p>
+          </div>
 
           <a
             href="#home"
-            className="text-sm font-medium text-black dark:text-white hover:text-gray-500 dark:hover:text-gray-300 transition"
+            className="text-sm text-[#D6B9AE] hover:text-white transition"
           >
-            Back to Top ↑
+            Back to top ↑
           </a>
-
         </div>
 
       </div>

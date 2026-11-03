@@ -1,106 +1,88 @@
 
 const portfolioData = {
-  name: "RYAN FALLORE",
-  role: "BSCS Student, Aspiring Web Developer & Network Engineer",
-  location: "Capoocan, Leyte, Philippines",
+  name: "BERNADETTE A. ELORZA",
+  role: "BSCS Student, Aspiring UI/UX Designer",
+  location: "Caibiran, Biliran, Philippines",
 
   about:
-    "I am a BSCS student interested in web development, networking, and IT infrastructure. I enjoy building websites, exploring generative AI tools, and using modern technologies to improve my skills, creativity, and problem-solving abilities.",
+    "Hi, I'm Bernadette Elorza, a 21-year-old fourth-year Bachelor of Science in Computer Science student at Biliran Province State University from Caibiran, Biliran. I'm continuously learning and improving my knowledge and skills. Aside from designing, I enjoy spending my free time cooking, riding a bicycle, and reading books. These activities allow me to explore my interests, stay active, and maintain a balance between my academic responsibilities and personal life.",
 
-  email: "falloreryan649@gmail.com",
-  github: "https://github.com/errorryan",
-  linkedin: "https://www.linkedin.com/in/falloreryan/",
+  email: "bernadetteelorza416@gmail.com",
+  github: "https://github.com/bernadetteelorza416-hub",
+  
 
   skills: [
     {
-      category: "Programming Languages",
-      items: ["Java", "PHP", "Python", "JavaScript"],
+      category: "Personal Skills",
+      items: ["Adaptability and Willingness to Learn", "Willing to Explore New Technologies", "Time Management", ],
     },
-    {
-      category: "Web Development",
-      items: ["Django", "Node.js", "HTML", "CSS", "Tailwind CSS","Flutter",],
-    },
-    {
-      category: "Networking & IT",
-      items: [
-        "OSI Model",
-        "IPv4/IPv6",
-        "TCP/IP",
-        "Subnetting",
-        "Cisco Packet Tracer",
-        "Traceroute",
-        "Wireshark",
-        "Troubleshooting",
-      ],
-    },
-    {
-      category: "Tools & Technologies",
-      items: [
-        "Git",
-        "GitHub",
-        "VS Code",
-        "MySQL",
-        "Firebase",
-        "Bootstrap",
-      ],
-    },
+    
   ],
 
 
 projects: [
   {
-    title: "FinGo",
+    title: "fresh farm",
     description:
-      "An e-commerce website that allows fishermen to sell their products online and buyers to purchase them.",
-    image: "/projects/fingo.png",
-    techStack: ["Python", "Django", "Tailwind CSS"],
-    github: "https://github.com/errorryan/django_fingo/tree/main/FinGo",
-    liveDemo: "https://e-commerce-django-xbxh.onrender.com",
+      "Fresh Farm is a web-based system designed to make agricultural transactions more convenient by connecting farmers and customers through an online platform. It allows users to browse available agricultural products, manage product information, and facilitate easier access to fresh farm produce.",
+    image: "/projects/fresh_farm.jpg",
+    techStack: ["Python", "Django", "CSS"],
   },
   {
-    title: "Recipe Website",
+    title: "PrintDayon",
     description:
-      "A recipe website featuring CRUD operations and user authentication, allowing users to create, read, update, and delete data securely through login and registration.",
-    techStack: ["PHP", "MySQL"],
+      "PrintDayon is a web-based printing service platform that helps customers find nearby printing shops, upload documents, customize printing requests, and monitor their transactions. It aims to improve the printing process through mapping, queue management, and optimized shop selection.",
+      image: "/projects/printdayon.webp",
+    techStack: ["React", " Node.js,"],
   },
-  {
-    title: "Loan Tracker",
-    description:
-      "A simple loan tracking application to manage and monitor loan applications.",
-    image: "/projects/loan.png",
-    techStack: ["Dart", "Flutter", "Firebase"],
-  },
-  {
-    title: "Task Scheduler",
-    description:
-      "A task scheduling application to manage and organize daily activities.",
-    image: "/projects/task.png",
-    techStack: ["Python", "Django", "Bootstrap", "SQLite"],
-  },
-],
 
+],
 
   certificates: [
     {
       title: "Networking Basics",
       issuer: "Cisco Networking Academy",
       date: "2026",
-      image: "NETWORKING BASICS.png",
-      file: "/certificates/Networking Basics.pdf",
+      image: "network basics.png",
+      file: "/certificates/NETWO.pdf",
     },
     {
       title: "Introduction to AI Literacy and Responsible Use",
       issuer: "Mapua University",
       date: "2026",
-      image: "INTRODUCTION TO AI.png",
-      file: "/certificates/Introduction to AI Literacy and Responsible Use.pdf",
+      image: "introduction ai.png",
+      file: "/certificates/ai.pdf",
     },
     {
-      title: "Getting Started with Cisco Packet Tracer",
-      issuer: "Cisco Networking Academy",
+      title: "Thesis Preparation with the Use of Trending Tools and Industry Practices",
+      issuer: "Computer Science Society",
+      date: "2025",
+      image: "css.png",
+      file: "/certificates/E-certificate.pdf",
+    },
+
+     {
+      title: "Less Hassle, More Hustle - Integrated OS",
+      issuer: "integrated os",
+      date: "2025",
+      image: "less.png",
+      file: "/certificates/Less.pdf",
+    },
+
+    {
+      title: "Integrated OS - Be More Digi-TALINO",
+      issuer: "integrated os",
+      date: "2025",
+      image: "digi.png",
+      file: "/certificates/DIGI.pdf",
+    },
+
+    {
+      title: "Symposium on Intellectual Property(IP) Awareness",
+      issuer: "OFFICE  OF INSTITUTIONAL INNOVATION AND TECHNOLOGY DEVELOPMENT",
       date: "2026",
-      image: "GETTING STARTED.png",
-      file: "/certificates/Getting Started with Cisco Packet Tracer.pdf",
+      image: "sympo.png",
+      file: "/certificates/Symposium E-Certificate.pdf",
     },
   ],
 };

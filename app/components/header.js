@@ -1,97 +1,4 @@
 
-// "use client";
-
-// import { useEffect, useState } from "react";
-
-// export default function Header() {
-//   const [isDark, setIsDark] = useState(false);
-//   const [isLoaded, setIsLoaded] = useState(false);
-
-//   // Load the saved theme
-//   useEffect(() => {
-//     const savedTheme = localStorage.getItem("theme");
-//     const darkMode = savedTheme === "dark";
-
-//     setIsDark(darkMode);
-//     document.documentElement.classList.toggle("dark", darkMode);
-//     setIsLoaded(true);
-//   }, []);
-
-//   // Switch between dark and light mode
-//   function toggleTheme() {
-//     const newTheme = !isDark;
-
-//     setIsDark(newTheme);
-//     document.documentElement.classList.toggle("dark", newTheme);
-//     localStorage.setItem("theme", newTheme ? "dark" : "light");
-//   }
-
-//   return (
-//     <header className="sticky top-0 z-50 bg-white/90 dark:bg-gray-950/90 backdrop-blur-lg border-b border-gray-200 dark:border-gray-800 transition-colors duration-300">
-
-//       <nav className="max-w-7xl mx-auto px-6 py-4 flex flex-wrap items-center justify-between gap-6">
-
-//         {/* Logo / Name */}
-//         <a
-//           href="#home"
-//           className="flex items-center gap-3 text-xl font-bold text-black dark:text-white hover:opacity-60 transition duration-300"
-//         >
-//           <img
-//             src="/LOGO RYAN.png"
-//             alt="Ryan logo"
-//             className="w-10 h-10 object-contain"
-//           />
-
-//           <span className="tracking-wider">RYAN.</span>
-//         </a>
-
-//         {/* Navigation Links */}
-//         <div className="flex flex-wrap items-center gap-2 text-sm font-medium">
-
-//           {[
-//             ["Home", "#home"],
-//             ["About", "#about"],
-//             ["Skills", "#skills"],
-//             ["Projects", "#projects"],
-//             ["Certificates", "#certificates"],
-//           ].map(([label, link]) => (
-//             <a
-//               key={label}
-//               href={link}
-//               className="px-4 py-2.5 rounded-full text-gray-600 dark:text-gray-300 hover:bg-black hover:text-white dark:hover:bg-white dark:hover:text-black transition-all duration-300"
-//             >
-//               {label}
-//             </a>
-//           ))}
-
-//           {/* Contact */}
-//           <a
-//             href="#contacts"
-//             className="bg-black dark:bg-white text-white dark:text-black px-5 py-2.5 rounded-full hover:bg-gray-700 dark:hover:bg-gray-300 transition duration-300"
-//           >
-//             Contact ↗
-//           </a>
-
-//           {/* Theme Switch */}
-//           <button
-//             type="button"
-//             onClick={toggleTheme}
-//             aria-label={isDark ? "Switch to light mode" : "Switch to dark mode"}
-//             title={isDark ? "Switch to light mode" : "Switch to dark mode"}
-//             className="ml-2 w-11 h-11 rounded-full border border-gray-300 dark:border-gray-700 flex items-center justify-center text-xl text-black dark:text-white hover:bg-gray-100 dark:hover:bg-gray-800 transition-all duration-300"
-//           >
-//             {isDark ? "☀️" : "🌙"}
-//           </button>
-
-//         </div>
-
-//       </nav>
-//     </header>
-//   );
-// }
-
-
-
 "use client";
 
 import { useEffect, useState } from "react";
@@ -100,7 +7,6 @@ export default function Header() {
   const [isDark, setIsDark] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
 
-  // Load the saved theme
   useEffect(() => {
     const savedTheme = localStorage.getItem("theme");
     const darkMode = savedTheme === "dark";
@@ -109,7 +15,6 @@ export default function Header() {
     document.documentElement.classList.toggle("dark", darkMode);
   }, []);
 
-  // Switch between dark and light mode
   function toggleTheme() {
     const newTheme = !isDark;
 
@@ -118,7 +23,6 @@ export default function Header() {
     localStorage.setItem("theme", newTheme ? "dark" : "light");
   }
 
-  // Navigation links
   const navLinks = [
     ["Home", "#home"],
     ["About", "#about"],
@@ -127,119 +31,156 @@ export default function Header() {
     ["Certificates", "#certificates"],
   ];
 
-  // Close menu after clicking a link
   function closeMenu() {
     setMenuOpen(false);
   }
 
   return (
-    <header className="sticky top-0 z-50 bg-white/90 dark:bg-gray-950/90 backdrop-blur-lg border-b border-gray-200 dark:border-gray-800 transition-colors duration-300">
-      <nav className="max-w-7xl mx-auto px-6 py-4">
+    <header className="sticky top-0 z-50 bg-[#FFF9F3]/95 dark:bg-[#241817]/95 backdrop-blur-lg transition-colors duration-300">
+      <nav className="max-w-[1400px] mx-auto px-6 md:px-12">
 
-        {/* Top navigation */}
-        <div className="flex items-center justify-between">
+        {/* Desktop Header */}
+        <div className="hidden md:flex items-center justify-between min-h-[90px] border-b border-[#E5D3C5] dark:border-[#493431]">
 
-          {/* Logo */}
+          {/* Brand */}
           <a
             href="#home"
-            onClick={closeMenu}
-            className="flex items-center gap-3 text-xl font-bold text-black dark:text-white"
+            className="flex flex-col leading-none"
           >
-            <img
-              src="/LOGO RYAN.png"
-              alt="Ryan logo"
-              className="w-10 h-10 object-contain"
-            />
-            <span className="tracking-wider">RYAN.</span>
+            <span className="text-2xl font-bold tracking-[0.12em] text-[#3B2523] dark:text-[#FFF9F3]">
+              BERNADETTE<span className="text-[#702F3D]">.</span>
+            </span>
+
+            <span className="text-[10px] tracking-[0.3em] uppercase text-[#A17C68] dark:text-[#D6B9AE] mt-2">
+              Personal Portfolio
+            </span>
           </a>
 
-          {/* Desktop navigation */}
-          <div className="hidden md:flex items-center gap-2 text-sm font-medium">
-            {navLinks.map(([label, link]) => (
+          {/* Navigation */}
+          <div className="flex items-center gap-7">
+            {navLinks.map(([label, link], index) => (
               <a
                 key={label}
                 href={link}
-                className="px-4 py-2.5 rounded-full text-gray-600 dark:text-gray-300 hover:bg-black hover:text-white dark:hover:bg-white dark:hover:text-black transition-all duration-300"
+                className="relative text-sm font-medium text-[#755E55] dark:text-[#D8C2B6] hover:text-[#702F3D] dark:hover:text-[#D6B9AE] transition-colors duration-300 group"
               >
                 {label}
+
+                <span className="absolute -bottom-2 left-0 w-0 h-[2px] bg-[#702F3D] dark:bg-[#D6B9AE] group-hover:w-full transition-all duration-300"></span>
               </a>
             ))}
 
+            {/* Theme Toggle */}
+            <button
+              type="button"
+              onClick={toggleTheme}
+              aria-label={isDark ? "Switch to light mode" : "Switch to dark mode"}
+              className="w-10 h-10 rounded-full bg-[#F3E8DC] dark:bg-[#3B2926] text-[#702F3D] dark:text-[#D6B9AE] hover:scale-110 transition-transform duration-300"
+            >
+              {isDark ? "☀️" : "☾"}
+            </button>
+
+            {/* Contact Button */}
             <a
               href="#contacts"
-              className="bg-black dark:bg-white text-white dark:text-black px-5 py-2.5 rounded-full hover:bg-gray-700 dark:hover:bg-gray-300 transition duration-300"
+              className="bg-[#702F3D] text-[#FFF9F3] px-6 py-3 text-sm font-medium rounded-full hover:bg-[#55232E] hover:-translate-y-1 transition-all duration-300"
             >
-              Contact ↗
+              Get in Touch ↗
             </a>
-
-            <button
-              type="button"
-              onClick={toggleTheme}
-              aria-label={isDark ? "Switch to light mode" : "Switch to dark mode"}
-              className="ml-2 w-11 h-11 rounded-full border border-gray-300 dark:border-gray-700 flex items-center justify-center text-xl text-black dark:text-white hover:bg-gray-100 dark:hover:bg-gray-800 transition-all duration-300"
-            >
-              {isDark ? "☀️" : "🌙"}
-            </button>
-          </div>
-
-          {/* Mobile buttons */}
-          <div className="flex md:hidden items-center gap-3">
-
-            {/* Theme button */}
-            <button
-              type="button"
-              onClick={toggleTheme}
-              aria-label={isDark ? "Switch to light mode" : "Switch to dark mode"}
-              className="w-10 h-10 rounded-full border border-gray-300 dark:border-gray-700 flex items-center justify-center text-lg"
-            >
-              {isDark ? "☀️" : "🌙"}
-            </button>
-
-            {/* Hamburger button */}
-            <button
-              type="button"
-              onClick={() => setMenuOpen(!menuOpen)}
-              aria-label={menuOpen ? "Close navigation menu" : "Open navigation menu"}
-              aria-expanded={menuOpen}
-              className="w-10 h-10 flex flex-col items-center justify-center gap-1.5 rounded-lg border border-gray-300 dark:border-gray-700"
-            >
-              {menuOpen ? (
-                <span className="text-2xl leading-none">×</span>
-              ) : (
-                <>
-                  <span className="w-5 h-0.5 bg-black dark:bg-white rounded-full"></span>
-                  <span className="w-5 h-0.5 bg-black dark:bg-white rounded-full"></span>
-                  <span className="w-5 h-0.5 bg-black dark:bg-white rounded-full"></span>
-                </>
-              )}
-            </button>
           </div>
         </div>
 
-        {/* Mobile menu */}
-        {menuOpen && (
-          <div className="md:hidden mt-5 pt-4 border-t border-gray-200 dark:border-gray-800 flex flex-col gap-2">
+        {/* Mobile Header */}
+        <div className="md:hidden">
 
-            {navLinks.map(([label, link]) => (
-              <a
-                key={label}
-                href={link}
-                onClick={closeMenu}
-                className="px-4 py-3 rounded-lg text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800 transition duration-300"
-              >
-                {label}
-              </a>
-            ))}
+          <div className="flex items-center justify-between py-5">
 
+            {/* Brand */}
             <a
-              href="#contacts"
+              href="#home"
               onClick={closeMenu}
-              className="mt-2 px-5 py-3 rounded-full text-center bg-black dark:bg-white text-white dark:text-black hover:bg-gray-700 dark:hover:bg-gray-300 transition duration-300"
+              className="flex flex-col leading-none"
             >
-              Contact ↗
+              <span className="text-xl font-bold tracking-[0.12em] text-[#3B2523] dark:text-[#FFF9F3]">
+                BERNADETTE<span className="text-[#702F3D]">.</span>
+              </span>
+
+              <span className="text-[9px] tracking-[0.3em] uppercase text-[#A17C68] dark:text-[#D6B9AE] mt-2">
+                Personal Portfolio
+              </span>
             </a>
+
+            {/* Mobile Controls */}
+            <div className="flex items-center gap-3">
+
+              <button
+                type="button"
+                onClick={toggleTheme}
+                aria-label={isDark ? "Switch to light mode" : "Switch to dark mode"}
+                className="w-10 h-10 rounded-full bg-[#F3E8DC] dark:bg-[#3B2926] text-[#702F3D] dark:text-[#D6B9AE]"
+              >
+                {isDark ? "☀️" : "☾"}
+              </button>
+
+              <button
+                type="button"
+                onClick={() => setMenuOpen(!menuOpen)}
+                aria-label={menuOpen ? "Close navigation menu" : "Open navigation menu"}
+                aria-expanded={menuOpen}
+                className="w-10 h-10 flex flex-col items-center justify-center gap-1.5 rounded-full border border-[#D6B9AE] dark:border-[#755F57]"
+              >
+                {menuOpen ? (
+                  <span className="text-2xl leading-none text-[#702F3D] dark:text-[#D6B9AE]">
+                    ×
+                  </span>
+                ) : (
+                  <>
+                    <span className="w-5 h-0.5 bg-[#3B2523] dark:bg-[#FFF9F3] rounded-full"></span>
+                    <span className="w-5 h-0.5 bg-[#3B2523] dark:bg-[#FFF9F3] rounded-full"></span>
+                  </>
+                )}
+              </button>
+            </div>
           </div>
-        )}
+
+          {/* Mobile Menu */}
+          {menuOpen && (
+            <div className="pb-6 pt-3 border-t border-[#E5D3C5] dark:border-[#493431]">
+
+              <p className="text-[10px] uppercase tracking-[0.3em] text-[#A17C68] dark:text-[#D6B9AE] mb-4">
+                Navigation
+              </p>
+
+              <div className="grid grid-cols-2 gap-2">
+                {navLinks.map(([label, link], index) => (
+                  <a
+                    key={label}
+                    href={link}
+                    onClick={closeMenu}
+                    className="flex items-center gap-3 px-4 py-4 rounded-xl bg-[#F3E8DC] dark:bg-[#30211F] text-[#3B2523] dark:text-[#FFF9F3] hover:bg-[#D6B9AE] dark:hover:bg-[#493431] transition-colors duration-300"
+                  >
+                    <span className="text-xs text-[#A17C68] dark:text-[#D6B9AE]">
+                      0{index + 1}
+                    </span>
+
+                    <span className="text-sm font-medium">
+                      {label}
+                    </span>
+                  </a>
+                ))}
+              </div>
+
+              <a
+                href="#contacts"
+                onClick={closeMenu}
+                className="mt-4 block text-center bg-[#702F3D] text-[#FFF9F3] px-5 py-4 rounded-xl font-medium hover:bg-[#55232E] transition-colors duration-300"
+              >
+                Get in Touch ↗
+              </a>
+            </div>
+          )}
+        </div>
+
       </nav>
     </header>
   );

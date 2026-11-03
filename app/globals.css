@@ -1,16 +1,26 @@
-
 @import "tailwindcss";
 
 @custom-variant dark (&:where(.dark, .dark *));
 
+/* ========================================
+   BURNT COFFEE & BALSAMICO THEME
+======================================== */
+
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: #FFF9F3;
+  --foreground: #3B2523;
+
+  --coffee: #3B2523;
+  --balsamico: #702F3D;
+  --cream: #F3E8DC;
+  --dusty-rose: #D6B9AE;
+  --caramel: #B58B70;
+  --ivory: #FFF9F3;
 }
 
 .dark {
-  --background: #0a0a0a;
-  --foreground: #ededed;
+  --background: #241817;
+  --foreground: #FFF9F3;
 }
 
 @theme inline {
@@ -20,12 +30,85 @@
   --font-mono: var(--font-geist-mono);
 }
 
+/* ========================================
+   GLOBAL STYLES
+======================================== */
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 90px;
+}
+
 body {
   background: var(--background);
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
+  transition: background-color 300ms ease, color 300ms ease;
+  margin: 0;
 }
 
-html {
-  scroll-behavior: smooth !important;
+/* ========================================
+   TEXT SELECTION
+======================================== */
+
+::selection {
+  background: #702F3D;
+  color: #FFF9F3;
+}
+
+/* ========================================
+   SCROLLBAR
+======================================== */
+
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #F3E8DC;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #B58B70;
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #702F3D;
+}
+
+.dark ::-webkit-scrollbar-track {
+  background: #241817;
+}
+
+.dark ::-webkit-scrollbar-thumb {
+  background: #70534B;
+}
+
+.dark ::-webkit-scrollbar-thumb:hover {
+  background: #A66B76;
+}
+
+/* ========================================
+   LINKS AND BUTTONS
+======================================== */
+
+a {
+  text-decoration: none;
+}
+
+button {
+  cursor: pointer;
+}
+
+/* ========================================
+   IMAGE DEFAULTS
+======================================== */
+
+img {
+  max-width: 100%;
 }

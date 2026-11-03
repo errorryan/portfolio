@@ -1,6 +1,4 @@
 
-
-
 import portfolioData from "../data";
 
 import {
@@ -15,11 +13,9 @@ import {
   FaLayerGroup,
   FaNetworkWired,
   FaRoute,
-  FaTools,
   FaGitAlt,
   FaGithub,
   FaCode,
-  FaServer,
   FaSitemap,
   FaWrench,
 } from "react-icons/fa";
@@ -33,10 +29,9 @@ import {
   SiMysql,
   SiFirebase,
   SiBootstrap,
-  SiVisualstudiocode,
 } from "react-icons/si";
 
-// Icon mapping for each skill
+// Icon mapping
 const skillIcons = {
   Java: FaJava,
   PHP: FaPhp,
@@ -61,7 +56,7 @@ const skillIcons = {
 
   Git: FaGitAlt,
   GitHub: FaGithub,
-  "VS Code":FaCode, 
+  "VS Code": FaCode,
   MySQL: SiMysql,
   Firebase: SiFirebase,
   Bootstrap: SiBootstrap,
@@ -71,72 +66,112 @@ export default function Skills() {
   return (
     <section
       id="skills"
-      className="bg-white dark:bg-gray-950 text-black dark:text-white py-28 px-6 scroll-mt-20 transition-colors duration-300"
+      className="bg-[#3B2523] dark:bg-[#1E1413] text-[#FFF9F3] py-28 px-6 md:px-12 scroll-mt-20 transition-colors duration-300"
     >
-      <div className="max-w-7xl mx-auto">
+      <div className="max-w-[1400px] mx-auto">
 
-        {/* Section Heading */}
-        <div className="mb-16">
-          <p className="text-sm font-semibold tracking-[0.3em] uppercase text-gray-500 dark:text-gray-400 mb-4">
-            What I Work With
-          </p>
+        {/* Section Introduction */}
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 mb-24">
 
-          <h2 className="text-4xl md:text-6xl font-bold tracking-tight mb-5">
-            Skills & Technologies
-            <span className="text-gray-400 dark:text-gray-500">.</span>
-          </h2>
+          <div className="lg:col-span-7">
+            <p className="text-xs uppercase tracking-[0.35em] text-[#D6B9AE] mb-8">
+              03 / My Capabilities
+            </p>
 
-          <p className="text-gray-500 dark:text-gray-400 text-base md:text-lg max-w-xl">
-            Technologies, programming languages, and tools
-            I use while learning and developing projects.
-          </p>
+            <h2 className="text-6xl md:text-8xl font-bold tracking-[-0.05em] leading-[0.95]">
+              Things I
+              <span className="block font-serif italic font-normal text-[#D6B9AE] ml-10 md:ml-24 mt-3">
+                work with.
+              </span>
+            </h2>
+          </div>
+
+          <div className="lg:col-span-5 flex flex-col justify-end">
+            <p className="text-[#D8C2B6] text-base md:text-lg leading-8 max-w-md">
+              A collection of design tools, creative technologies, and skills I have explored and developed throughout my UI/UX design journey and creative projects.A collection of programming languages, technologies,
+              and tools I have explored and used throughout my
+              learning journey and development projects.
+            </p>
+
+            <div className="flex items-center gap-4 mt-8">
+              <span className="w-12 h-[2px] bg-[#B58B70]"></span>
+              <span className="text-xs uppercase tracking-[0.2em] text-[#D6B9AE]">
+                Learning through practice
+              </span>
+            </div>
+          </div>
         </div>
 
-        {/* Skill Categories */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+        {/* Skills List */}
+        <div className="border-t border-[#70534B]">
 
           {portfolioData.skills.map((skill, index) => (
             <div
               key={skill.category}
-              className="group bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-800 rounded-2xl p-7 hover:border-black dark:hover:border-white hover:-translate-y-1 transition-all duration-300"
+              className="group grid grid-cols-1 md:grid-cols-12 gap-6 md:gap-10 py-10 border-b border-[#70534B] hover:bg-[#493431]/30 transition-colors duration-300"
             >
 
-              {/* Category Heading */}
-              <div className="flex items-center justify-between mb-7">
-                <h3 className="text-xl md:text-2xl font-bold">
-                  {skill.category}
-                </h3>
-
-                <span className="text-sm font-semibold text-gray-400 dark:text-gray-500">
+              {/* Category Number */}
+              <div className="md:col-span-1">
+                <span className="font-serif italic text-2xl text-[#B58B70]">
                   {String(index + 1).padStart(2, "0")}
                 </span>
               </div>
 
-              {/* Skills with Icons */}
-              <div className="flex flex-wrap gap-3">
+              {/* Category Name */}
+              <div className="md:col-span-4">
+                <p className="text-[10px] uppercase tracking-[0.25em] text-[#B58B70] mb-3">
+                  Skill Category
+                </p>
 
-                {skill.items.map((item) => {
-                  const Icon = skillIcons[item] || FaCode;
-
-                  return (
-                    <span
-                      key={item}
-                      className="inline-flex items-center gap-2.5 px-4 py-2.5 rounded-xl bg-gray-100 dark:bg-gray-800 border border-gray-200 dark:border-gray-700 text-gray-700 dark:text-gray-200 text-sm font-medium hover:bg-black hover:text-white hover:border-black dark:hover:bg-white dark:hover:text-black dark:hover:border-white transition-all duration-300 cursor-default"
-                    >
-                      <Icon className="text-lg shrink-0" />
-                      {item}
-                    </span>
-                  );
-                })}
-
+                <h3 className="text-2xl md:text-3xl font-semibold group-hover:text-[#D6B9AE] transition-colors">
+                  {skill.category}
+                </h3>
               </div>
+
+              {/* Skill Items */}
+              <div className="md:col-span-7">
+                <div className="flex flex-wrap gap-3">
+
+                  {skill.items.map((item) => {
+                    const Icon = skillIcons[item] || FaCode;
+
+                    return (
+                      <div
+                        key={item}
+                        className="flex items-center gap-2.5 border border-[#70534B] bg-[#493431]/40 px-4 py-3 hover:bg-[#702F3D] hover:border-[#A66B76] transition-all duration-300"
+                      >
+                        <Icon className="text-lg text-[#D6B9AE]" />
+
+                        <span className="text-sm text-[#F3E8DC]">
+                          {item}
+                        </span>
+                      </div>
+                    );
+                  })}
+
+                </div>
+
+                <p className="text-xs text-[#BFA69A] mt-5">
+                  {skill.items.length} skills and technologies
+                </p>
+              </div>
+
             </div>
           ))}
 
         </div>
 
-        {/* Bottom Divider */}
-        <div className="mt-20 border-t border-gray-200 dark:border-gray-800"></div>
+        {/* Bottom Statement */}
+        <div className="mt-16 flex flex-col md:flex-row justify-between gap-6 items-start md:items-center">
+
+          <p className="font-serif italic text-xl md:text-2xl text-[#D6B9AE]">
+            Always curious. Always improving.
+          </p>
+
+         
+
+        </div>
 
       </div>
     </section>
